@@ -82,8 +82,8 @@
    
     <label for="estado">Estado civil:</label>
     <div class="radio">
-        <label><input type="radio" id="estado" name="estado" value="casado">Casado</label>       
-        <label><input type="radio"  id="estado" name="estado" value="soltero">Soltero</label>
+        <label><input type="radio" id="estado" name="estado" value="casado">Casado(a)</label>       
+        <label><input type="radio"  id="estado" name="estado" value="soltero">Soltero(a)</label>
         <label><input type="radio"  id="estado" name="estado" value="otro">Otro</label>
     </div>
 
@@ -107,26 +107,6 @@
     <label class="checkbox-inline"><input type="checkbox" id="aficion" name="aficion[]" value="musica">Música</label>
     <label class="checkbox-inline"><input type="checkbox" id="aficion" name="aficion[]" value="tv">Televisión</label>
     </div>
-
-    <br> </br>
-
-        <div class="checkbox">
-    <label><input type="checkbox" name="check_lista[]" value="C++">C++</label>
-    </div>
-    <div class="checkbox"> 
-    <label><input type="checkbox" name="check_lista[]" value="Java">Java</label>
-    </div>
-    <div class="checkbox">
-    <label><input type="checkbox" name="check_lista[]" value="PHP7">PHP 7</label>
-    </div> 
-    <div class="checkbox">
-    <label><input type="checkbox" name="check_lista[]" value="HTML5/CSS">HTML5/CSS</label>
-    </div> 
-    <div class="checkbox">
-    <label><input type="checkbox" name="check_lista[]" value="JavaScript/jQuery">JavaScript/jQuery</label>
-    </div> 
-
-
 
     <br> </br>
     <button type="submit" name="btnEnviar" class="btn btn-default" value="enviar">Enviar</button>

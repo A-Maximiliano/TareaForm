@@ -63,8 +63,8 @@ $varpeso ="";
 $varsexo ="";
 $varestado ="";
 $varestudio ="";
-$varaficiones =[($_POST['aficion'])];
-$varaficiones1 = array(($_POST['aficion']));
+//$varaficiones =[($_POST['aficion'])];
+//$varaficiones1 = array(($_POST['aficion']));
 
 
 if ($_POST['nombre']==null || $_POST['nombre']=="") {
@@ -93,17 +93,17 @@ else
 
 //Validar el genero de la  persona
 if ($_POST['sexo']== "hombre") {
-    $varsexo = "hombre";
+    $varsexo = "Sexo masculuno,";
 }else{
-    $varsexo = "mujer";
+    $varsexo = "Sexo femenino,";
 }
 
 //Validar el estado civil
 if ($_POST['estado']== "casado") {
-    $varestado = "Casado";
+    $varestado = "Casado(a)";
 }
 elseif ($_POST['estado']== "soltero") {
-    $varestado = "Soltero";
+    $varestado = "Soltero(a)";
 }
 else{
     $varestado = "otro";
@@ -126,7 +126,7 @@ switch ($varestudio) {
 
 
 //Validar aficiones de la persona
-switch ($varaficiones) {
+/*switch ($varaficiones) {
     case "cine":
         $varaficiones += "cine";
         break;
@@ -138,30 +138,16 @@ switch ($varaficiones) {
     default:
     $varaficiones = "videojuegos";
         break;
-}
+}*/
 
 
-$var= "aqui van los valores";
+//$var= "aqui van los valores";
 //Validacion de envio de formulario
 
-    if(isset($_POST['btnEnviar'])){
-        if(!empty($_POST['aficion'])){
-        // Contando el numero de input seleccionados "checked" checkboxes.
-        $checked_contador = count($_POST['aficion']);
-        echo "<p>Has seleccionado los siguientes ".$checked_contador." opcione(s):</p> <br/>";
-        // Bucle para almacenar y visualizar valores activados checkbox.
-        foreach($_POST['aficion'] as $seleccion) {
-        echo "<p>".$seleccion ."</p>";
-        }
-        echo "<br/><b>Nota :</b> <span>De manera similar, también puede realizar operaciones CRUD usando estos valores seleccionados.</span>";
-        }
-        else{
-        echo "<p><b>Por favor seleccione al menos una opción.</b></p>";
-        }
-        }
+   
 
 
-        if(isset($_POST['btnEnviar'])){ 
+       /* if(isset($_POST['btnEnviar'])){ 
         if(!empty($_POST['check_lista'])) {
             // Contando el numero de input seleccionados "checked" checkboxes.
             $checked_contador = count($_POST['check_lista']);
@@ -175,20 +161,36 @@ $var= "aqui van los valores";
             else{
             echo "<p><b>Por favor seleccione al menos una opción.</b></p>";
             }
-            }
+            }*/
 
 
 
 //IMPRIMIR EN PANTALLA
 echo "$var" . "$varnom" . " $varape" ."<br>";
 
-echo "$var1" . " $varedad" . " $var2" ." $varpeso" . " $varsexo". "<br>";
-echo " $varestado" . "<br>";
+echo "$var1" . " $varedad" . " $var2" ." $varpeso" . " kg ".  "<br>";
+echo " $varsexo"." $varestado" . "<br>";
 echo " $varestudio" . "<br>";
-echo " $varaficiones" . "<br>";
+//echo " $varaficiones" . "<br>";
 
 //echo implode(" ", $varaficiones). "<br>";
-echo implode(" ", $varaficiones1);
+//echo implode(" ", $varaficiones1);
+
+if(isset($_POST['btnEnviar'])){
+    if(!empty($_POST['aficion'])){
+    // Contando el numero de input seleccionados "checked" checkboxes.
+    $checked_contador = count($_POST['aficion']);
+    echo "Con las siguientes ".$checked_contador." aficiones:</br>";
+    // Bucle para almacenar y visualizar valores activados checkbox.
+    foreach($_POST['aficion'] as $seleccion) {
+    echo $seleccion ."</br>";
+    }
+    
+    }
+    else{
+    echo "<p><b>No seleccionó ninguna afición.</b></p>";
+    }
+    }
 
 }
 ?>
