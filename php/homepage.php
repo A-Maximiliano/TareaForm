@@ -47,17 +47,20 @@
 
 <div class="container">
   <h2>Ingrese los datos solicitados</h2>
-  <form action="/action_page.php">
+  <form action="datos.php" method="POST">
     <div class="form-group">
+
       <label for="nombre">nombre:</label>
       <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" name="nombre">
       <br> </br>
-      <label for="nombre">apellido:</label>
-      <input type="text" class="form-control" id="nombre" placeholder="Ingrese apellido" name="nombre">
+
+      <label for="apellido">apellido:</label>
+      <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido" name="apellido">
       <br> </br>
-      <label for="nombre">edad:</label>
+
+      <label for="edad">edad:</label>
       <!-- <input type="text" id="cmbedad" placeholder="Seleccione edad" name="combobox"/> -->
-        <select name=" optionlist " onChange="combo(this, 'cmbedad')">
+        <select name="edad" onChange="combo(this, 'cmbedad')">
         <option> 18-25</option>
         <option>26-33</option>
         <option>34-41</option>
@@ -66,58 +69,69 @@
         </select>
 
       <br> </br>
-      <label for="nombre">peso:</label>
-      <input type="number" class="form-control" id="nombre" placeholder="Ingrese su peso" name="nombre">
+      <label for="peso">peso:</label>
+      <input type="number" class="form-control" id="peso" placeholder="Ingrese su peso" name="peso">
 
       <br> </br>
-      <label for="nombre">Sexo:</label>
+      <label for="sexo">Sexo:</label>
       <div>
       <div class="radio">
-        <label><input type="radio" name="optradio" >Hombre </label>
-        
-        
-        <label><input type="radio" name="optradio">Mujer</label>
- 
+        <label><input type="radio" id="sexo" name="sexo" value="hombre">Hombre </label>
+        <label><input type="radio" id="sexo" name="sexo" value="mujer">Mujer</label>
     </div>
    
-    <label for="nombre">Estado civil:</label>
+    <label for="estado">Estado civil:</label>
     <div class="radio">
-        <label><input type="radio" name="optradio" >Casado</label>
-        
-        
-        <label><input type="radio" name="optradio">Soltero</label>
-        
-      
-        <label><input type="radio" name="optradio" >Otro</label>
+        <label><input type="radio" id="estado" name="estado" value="casado">Casado</label>       
+        <label><input type="radio"  id="estado" name="estado" value="soltero">Soltero</label>
+        <label><input type="radio"  id="estado" name="estado" value="otro">Otro</label>
     </div>
 
-    <label for="nombre">Estudios:</label>
+    <label for="estudios">Estudios:</label>
     <div class="radio">
-        <label><input type="radio" name="optradio" >No tiene estudios</label>
-        
-        
-        <label><input type="radio" name="optradio">Estudios primarios</label>
-        
-      
-        <label><input type="radio" name="optradio" >Estudios secundarios</label>
+        <label><input type="radio" id="estudio" name="estudio" value="no">No tiene estudios</label>
+        <label><input type="radio" id="estudio" name="estudio" value="primarios">Estudios primarios</label>
+        <label><input type="radio" id="estudio" name="estudio" value="secundarios">Estudios secundarios</label>
     </div>
 
     </div>
     
-      <label for="nombre">Aficiones:</label>
+      <label for="aficion">Aficiones:</label>
     <div class="checkbox">
-    <label class="checkbox-inline"><input type="checkbox" value="">Cine</label>
-    <label class="checkbox-inline"><input type="checkbox" value="">Literatura</label>
-    <label class="checkbox-inline"><input type="checkbox" value="">Teatro</label>
+    <label class="checkbox-inline"><input type="checkbox" id="aficion" name="aficion[]" value="cine">Cine</label>
+    <label class="checkbox-inline"><input type="checkbox" id="aficion" name="aficion[]" value="literatura">Literatura</label>
+    <label class="checkbox-inline"><input type="checkbox" id="aficion" name="aficion[]" value="teatro">Teatro</label>
     </div>
     <div class="checkbox">
-    <label class="checkbox-inline"><input type="checkbox" value="">Deporte</label>
-    <label class="checkbox-inline"><input type="checkbox" value="">Música</label>
-    <label class="checkbox-inline"><input type="checkbox" value="">Televisión</label>
+    <label class="checkbox-inline"><input type="checkbox" id="aficion" name="aficion[]" value="deporte">Deporte</label>
+    <label class="checkbox-inline"><input type="checkbox" id="aficion" name="aficion[]" value="musica">Música</label>
+    <label class="checkbox-inline"><input type="checkbox" id="aficion" name="aficion[]" value="tv">Televisión</label>
     </div>
+
     <br> </br>
-    <button type="submit" class="btn btn-default">Enviar</button>
-    <button type="submit" class="btn btn-default">Cancelar</button>
+
+        <div class="checkbox">
+    <label><input type="checkbox" name="check_lista[]" value="C++">C++</label>
+    </div>
+    <div class="checkbox"> 
+    <label><input type="checkbox" name="check_lista[]" value="Java">Java</label>
+    </div>
+    <div class="checkbox">
+    <label><input type="checkbox" name="check_lista[]" value="PHP7">PHP 7</label>
+    </div> 
+    <div class="checkbox">
+    <label><input type="checkbox" name="check_lista[]" value="HTML5/CSS">HTML5/CSS</label>
+    </div> 
+    <div class="checkbox">
+    <label><input type="checkbox" name="check_lista[]" value="JavaScript/jQuery">JavaScript/jQuery</label>
+    </div> 
+
+
+
+    <br> </br>
+    <button type="submit" name="btnEnviar" class="btn btn-default" value="enviar">Enviar</button>
+    <button type="submit" name="btnCancelar" class="btn btn-default" value="cancelar">Cancelar</button>
+
   </form>
 </div>
 </div>

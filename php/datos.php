@@ -37,12 +37,166 @@
 <div class="jumbotron">
   <div class="container text-center">
   <img src="../recursos/img/OIP.jpg">
-    <h1>Mi Formulario</h1>      
+    <h1>Datos del Formulario</h1>      
     <p>Tarea de Programacion Avanzada</p>
   </div>
 </div>
 
 
+<center>
+<h2>Datos Ingresados</h2>
+
+  <form>
+    <div class="form-group">
+
+<!--ESTO ES CODIGO PHP-->
+<?php
+// Obtener datos ingresados
+
+if (isset($_POST['btnEnviar'])) {
+// declarar variables vacias
+$var ="";
+$varnom ="";
+$varape ="";
+$varedad ="";
+$varpeso ="";
+$varsexo ="";
+$varestado ="";
+$varestudio ="";
+$varaficiones =[($_POST['aficion'])];
+$varaficiones1 = array(($_POST['aficion']));
+
+
+if ($_POST['nombre']==null || $_POST['nombre']=="") {
+
+    $var= "No se ingreó el nombre";
+   $varnom ="";
+
+}  
+//SI TODO ESTA CORRECTO    $varestado = ($_POST['estado']);
+else
+{
+   $var = "Los datos ingresados son: ";
+   $varnom = ($_POST['nombre']);
+   $varape = ($_POST['apellido']);
+   $var1 = " Con una edad entre los ";
+   $varedad = ($_POST['edad']);
+   $var2 = " y un peso de ";
+   $varpeso = ($_POST['peso']);
+   $varsexo = ($_POST['sexo']);
+   $varestado = ($_POST['estado']);
+   $varestudio = ($_POST['estudio']);
+   //$varaficiones = [($_POST['aficion'])];
+  // $varaficiones1 = [($_POST['aficion'])];
+   
+}
+
+//Validar el genero de la  persona
+if ($_POST['sexo']== "hombre") {
+    $varsexo = "hombre";
+}else{
+    $varsexo = "mujer";
+}
+
+//Validar el estado civil
+if ($_POST['estado']== "casado") {
+    $varestado = "Casado";
+}
+elseif ($_POST['estado']== "soltero") {
+    $varestado = "Soltero";
+}
+else{
+    $varestado = "otro";
+}
+
+//Validar los estudios
+switch ($varestudio) {
+    case "no":
+        $varestudio = "No tiene estudio";
+        break;
+
+    case "primarios":
+        $varestudio = "Tiene estudios primarios";
+        break;
+    
+    default:
+    $varestudio = "Tiene estudios secundarios";
+        break;
+}
+
+
+//Validar aficiones de la persona
+switch ($varaficiones) {
+    case "cine":
+        $varaficiones += "cine";
+        break;
+
+    case "literatura":
+        $varaficiones += "literatura";
+        break;
+    
+    default:
+    $varaficiones = "videojuegos";
+        break;
+}
+
+
+$var= "aqui van los valores";
+//Validacion de envio de formulario
+
+    if(isset($_POST['btnEnviar'])){
+        if(!empty($_POST['aficion'])){
+        // Contando el numero de input seleccionados "checked" checkboxes.
+        $checked_contador = count($_POST['aficion']);
+        echo "<p>Has seleccionado los siguientes ".$checked_contador." opcione(s):</p> <br/>";
+        // Bucle para almacenar y visualizar valores activados checkbox.
+        foreach($_POST['aficion'] as $seleccion) {
+        echo "<p>".$seleccion ."</p>";
+        }
+        echo "<br/><b>Nota :</b> <span>De manera similar, también puede realizar operaciones CRUD usando estos valores seleccionados.</span>";
+        }
+        else{
+        echo "<p><b>Por favor seleccione al menos una opción.</b></p>";
+        }
+        }
+
+
+        if(isset($_POST['btnEnviar'])){ 
+        if(!empty($_POST['check_lista'])) {
+            // Contando el numero de input seleccionados "checked" checkboxes.
+            $checked_contador = count($_POST['check_lista']);
+            echo "<p>Has seleccionado los siguientes ".$checked_contador." opcione(s):</p> <br/>";
+            // Bucle para almacenar y visualizar valores activados checkbox.
+            foreach($_POST['check_lista'] as $seleccion) {
+            echo "<p>".$seleccion ."</p>";
+            }
+            echo "<br/><b>Nota :</b> <span>De manera similar, también puede realizar operaciones CRUD usando estos valores seleccionados.</span>";
+            }
+            else{
+            echo "<p><b>Por favor seleccione al menos una opción.</b></p>";
+            }
+            }
+
+
+
+//IMPRIMIR EN PANTALLA
+echo "$var" . "$varnom" . " $varape" ."<br>";
+
+echo "$var1" . " $varedad" . " $var2" ." $varpeso" . " $varsexo". "<br>";
+echo " $varestado" . "<br>";
+echo " $varestudio" . "<br>";
+echo " $varaficiones" . "<br>";
+
+//echo implode(" ", $varaficiones). "<br>";
+echo implode(" ", $varaficiones1);
+
+}
+?>
+
+
+</div>
+</form>
+</center>
 
 
 <footer>
