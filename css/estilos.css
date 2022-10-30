@@ -1,9 +1,4 @@
-Skip to content Search or jump to… Pull requests Issues Marketplace Explore @A-Maximiliano Magtimus / Footer-HTML5-CSS3 Public Code Issues Pull requests Actions Projects Security Insights Footer-HTML5-CSS3/css/estilos.css @Magtimus Magtimus Footer diseñado con html5 - css3 Latest commit 0cc4e9c on 28 Nov 2017 History 1 contributor 146 lines (105 sloc) 1.58 KB * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
+
 
 footer {
     width: 100%;
@@ -131,3 +126,24 @@ footer {
         margin-top: 40px;
     }
 }
+
+a {
+    display: block;
+   width: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+   border-radius: 10px;
+   margin: 150px 130px;
+    padding: 15px 30px;
+   background-color:#7A36D4;
+   color:#fff;
+   text-decoration: none;
+}
+a:hover{
+    background-color: transparent;
+    border: 2px solid #7A36D4;                   
+    color:#7A36D4;
+             
+}
+
+

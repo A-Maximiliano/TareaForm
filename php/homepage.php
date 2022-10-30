@@ -48,6 +48,7 @@
 <div class="container">
   <h2>Ingrese los datos solicitados</h2>
   <form action="datos.php" method="POST">
+  
     <div class="form-group">
 
       <label for="nombre">nombre:</label>
@@ -110,13 +111,19 @@
 
     <br> </br>
     <button type="submit" name="btnEnviar" class="btn btn-default" value="enviar">Enviar</button>
-    <button type="submit" name="btnCancelar" class="btn btn-default" value="cancelar">Cancelar</button>
+    <!--<button type="submit" name="btnCancelar" class="btn btn-default" value="cancelar">Cancelar</button>-->
+
+    <a href="homepage.php" target="_blank">Cancelar</a>
+
 
   </form>
+  
 </div>
 </div>
 </div>
 
+ <!--<button type="submit" onclick=" return validar();"> Cancelar </button>
+ <script type=" "javascript" src="../JS/app.js"></script> -->
 
 <footer>
        

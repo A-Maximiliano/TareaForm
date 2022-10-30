@@ -53,6 +53,11 @@
 <?php
 // Obtener datos ingresados
 
+
+if (isset($_POST['btnCancelar'])) {
+    //action="homepage.php" method="POST"> 
+}
+
 if (isset($_POST['btnEnviar'])) {
 // declarar variables vacias
 $var ="";
